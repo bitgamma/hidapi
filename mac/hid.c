@@ -991,7 +991,7 @@ void HID_API_EXPORT hid_close(hid_device *dev)
 	   been unplugged. If it's been unplugged, then calling
 	   IOHIDDeviceClose() will crash. */
 	if (!dev->disconnected) {
-		IOHIDDeviceClose(dev->device_handle, kIOHIDOptionsTypeSeizeDevice);
+		IOHIDDeviceClose(dev->device_handle, kIOHIDOptionsTypeNone);
 	}
 
 	/* Clear out the queue of received reports. */
